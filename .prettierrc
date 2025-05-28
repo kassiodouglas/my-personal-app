@@ -1,7 +1,10 @@
 {
   "singleQuote": true,
+  "semi": true,
   "printWidth": 180,
+  "useTabs": false,
   "arrowParens": "avoid",
+  "trailingComma": "none",
   "overrides": [
     {
       "files": "*.html",

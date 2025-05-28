@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
+  selector: 'mpa-auth',
   imports: [RouterModule],
-  selector: 'mpa-root',
-  template: '<router-outlet></router-outlet>'
+  templateUrl: './auth.layout.html',
+  styleUrl: './auth.layout.css'
 })
-export class AppComponent {}
+export class AuthLayout {}

@@ -1,27 +1,18 @@
 import nx from '@nx/eslint-plugin';
-const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
+// import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
-  eslintPluginPrettierRecommended,
+  // eslintPluginPrettierRecommended,
   {
-    ignores: ['**/dist'],
+    ignores: ['**/dist']
   },
   {
-    files: [
-      '**/*.ts',
-      '**/*.tsx',
-      '**/*.cts',
-      '**/*.mts',
-      '**/*.js',
-      '**/*.jsx',
-      '**/*.cjs',
-      '**/*.mjs',
-    ],
+    files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts', '**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
     // Override or add rules here
-    rules: {},
+    rules: {}
   },
   ...nx.configs['flat/angular'],
   ...nx.configs['flat/angular-template'],
@@ -33,22 +24,28 @@ export default [
         {
           type: 'attribute',
           prefix: 'mpa',
-          style: 'camelCase',
-        },
+          style: 'camelCase'
+        }
       ],
       '@angular-eslint/component-selector': [
         'error',
         {
           type: 'element',
           prefix: 'mpa',
-          style: 'kebab-case',
-        },
+          style: 'kebab-case'
+        }
       ],
-    },
+      '@angular-eslint/component-class-suffix': [
+        'error',
+        {
+          suffixes: ['Component', 'Page', 'Dialog', 'Layout']
+        }
+      ]
+    }
   },
   {
     files: ['**/*.html'],
     // Override or add rules here
-    rules: {},
-  },
+    rules: {}
+  }
 ];
